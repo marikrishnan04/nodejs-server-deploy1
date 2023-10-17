@@ -6,6 +6,7 @@ const loginRouter = require('./allRouters/userLogin');
 const forgotRouter = require('./allRouters/userForgotPassword');
 const resetRouter = require('./allRouters/userReset');
 const userDetailsrouter = require('./allRouters/userDetails');
+const TimeSheetrouter = require('./allRouters/excelSchema/excelSchema');
 const app=express();
 const port= process.env.PORT;
 require('dotenv').config();
@@ -23,6 +24,7 @@ app.use("/user/registration",regRouter) //user registration api
 app.use("/user/login",loginRouter) // user login api
 app.use("/user/forgot-password",forgotRouter) // user forgot api
 app.use("/user/reset/",resetRouter)  // user reset api pass that userId token
+app.use("/user/TimeSheet",TimeSheetrouter)
 
   
 app.listen(port, () => {
